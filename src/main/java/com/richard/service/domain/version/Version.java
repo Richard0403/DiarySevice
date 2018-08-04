@@ -17,7 +17,7 @@ public class Version {
     @GeneratedValue
     private long id;
     @Column(columnDefinition = "int COMMENT '0.提示更新，1.不提示更新，2.强制更新'")
-    private boolean isForce;
+    private int isForce;
     private double size;
     private String updateContent;
     private String url;
@@ -39,7 +39,7 @@ public class Version {
 
     }
 
-    public Version(boolean isForce, double size, String updateContent, String url, int versionCode, String versionName) {
+    public Version(int isForce, double size, String updateContent, String url, int versionCode, String versionName) {
         this.isForce = isForce;
         this.size = size;
         this.updateContent = updateContent;
@@ -56,12 +56,12 @@ public class Version {
         this.id = id;
     }
 
-    public boolean isForce() {
+    public int getIsForce() {
         return isForce;
     }
 
-    public void setForce(boolean force) {
-        isForce = force;
+    public void setIsForce(int isForce) {
+        this.isForce = isForce;
     }
 
     public double getSize() {
