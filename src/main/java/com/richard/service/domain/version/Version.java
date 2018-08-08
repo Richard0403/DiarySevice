@@ -16,7 +16,7 @@ public class Version {
     @Id
     @GeneratedValue
     private long id;
-    @Column(columnDefinition = "int COMMENT '0.提示更新，1.不提示更新，2.强制更新'")
+    @Column(columnDefinition = "int COMMENT '0.不提示更新，1.提示更新，2.强制更新'")
     private int isForce;
     private double size;
     private String updateContent;
