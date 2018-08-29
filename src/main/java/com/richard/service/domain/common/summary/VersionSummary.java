@@ -4,6 +4,7 @@ package com.richard.service.domain.common.summary;
 import javax.persistence.*;
 
 @Entity
+
 @SqlResultSetMapping(
         name = "versionMapping",
         entities = @EntityResult(

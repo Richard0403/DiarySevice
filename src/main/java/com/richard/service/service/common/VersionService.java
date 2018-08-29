@@ -33,4 +33,12 @@ public class VersionService {
         query.setParameter("isForce", isForce);
         return query.getResultList();
     }
+
+    public List<VersionSummary> getVersions(int pageSize, int pageNo){
+        String sql = "select id, size, version_name from version order by version_code";
+        Query query = entityManager.createNativeQuery(sql, VersionSummary.class);
+        query.setMaxResults(pageSize);
+        query.setFirstResult(pageNo * pageSize);
+        return query.getResultList();
+    }
 }

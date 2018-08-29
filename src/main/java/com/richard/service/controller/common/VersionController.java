@@ -45,4 +45,11 @@ public class VersionController {
         List<VersionSummary> versions = versionService.getVersion(isForce);
         return RestGenerator.genResult(ErrorCode.OK, versions, "success");
     }
+    @RequestMapping(value = "/getVersionPage")
+    public RestResult getVersionPage(@RequestBody Map<String, Object> params){
+        int pageNo = Integer.parseInt(params.get("pageNo").toString());
+        int pageSize = Integer.parseInt(params.get("pageSize").toString());
+        List<VersionSummary> versions = versionService.getVersions(pageSize,pageNo);
+        return RestGenerator.genResult(ErrorCode.OK, versions, "success");
+    }
 }

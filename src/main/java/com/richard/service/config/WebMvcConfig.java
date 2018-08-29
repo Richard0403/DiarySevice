@@ -15,7 +15,7 @@ import java.util.List;
  * by Richard on 2017/8/27
  * desc:
  */
-@Configuration
+//@Configuration
 class WebMvcConfig extends WebMvcConfigurerAdapter {
     @Bean
     public TokenInterceptor tokenInterceptor() {
